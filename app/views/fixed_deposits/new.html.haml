@@ -1,58 +1,58 @@
 .container-fluid
   .container
-    .header
-      %h2 Open Standard Fixed Deposit
-    .wrapper.col-md-4.pull-left
-      %ul
-        %li Debit Account Number :
-        %li Amount Of Deposit* :
-        %li Type Of Deposit* :
-        %li Tenure Of Deposit(Year)* :
-        %li Tenure Of Deposit(Months)* :
-        %li Tenure Of Deposit(days)* :
-        %li
-          PAN :
-          %label.col-md-12 (PAN is compulsory for FD request of Rs.50,000/- and above)
-        %li Maturity Proceeds* :
-        %li Mobile Number** :
-        %li Email ** :
-    .wrapper.input-field.col-md-4
-      %ul
-        %li
-          %input.form-control{:type => "text"}/
-        %li
-          %input.form-control{:type => "text"}/
-        %li
-          %select#sel1.form-control
-            %option Saving
-            %option Current
-            %option Salary
-            %option Fixed
-        %li
-          %select#sel2.form-control
-            %option
-            %option
-        %li
-          %select#sel3.form-control
-            %option
-            %option
-        %li
-          %input.form-control{:type => "text"}/
-        %li
-          %input.form-control{:type => "text"}/
-        %li
-          %select#sel4.form-control
-            %option
-            %option
-        %li
-          %input.form-control{:type => "text"}/
-        %li
-          %input.form-control{:type => "text"}/
-    .wrapper.comment-section.col-md-4
-      %ul
-        %li
-        %li
-        %li
-        %li
-          %label Fixed deposit Interest Rate
-        %li
+    = form_for @fixed_deposit do |f|
+      - if @fixed_deposit.errors.present?
+        %ul
+          - @fixed_deposit.errors.full_messages.each do |msg|
+            %li #{msg}
+      .header
+        %h2 Open Standard Fixed Deposit
+      .wrapper.col-md-4.pull-left
+        %ul
+          %li Debit Account Number :
+          %li Amount Of Deposit* :
+          %li Type Of Deposit* :
+          %li Tenure Of Deposit(Year)* :
+          %li Tenure Of Deposit(Months)* :
+          %li Tenure Of Deposit(days)* :
+          %li
+            PAN :
+            %label.col-md-12 (PAN is compulsory for FD request of Rs.50,000/- and above)
+          %li Maturity Proceeds* :
+          %li Mobile Number** :
+          %li Email ** :
+          %li Age* :
+      .wrapper.input-field.col-md-4
+        %ul
+          %li
+            = f.text_field :account_number, class: 'form-control'
+          %li
+            = f.text_field :deposit_amount, class: 'form-control'
+          %li
+            = f.select :type_of_deposit, options_for_select(['Saving', 'Current', 'Salary', 'Fixed']), id: 'sel1', class: 'form-control'
+          %li
+            = f.select :tenure_of_deposit_year, options_for_select(1950..2050), id: 'sel2', class: 'form-control'
+          %li
+            = f.select :tenure_of_deposit_month, options_for_select(1..12), id: 'sel3', class: 'form-control'
+          %li
+            = f.select :tenure_of_deposit_day, options_for_select(1..31), id: 'sel4', class: 'form-control'
+          %li
+            = f.text_field :pan, class: 'form-control'
+          %li
+            = f.text_field :maturity_proceed, class: 'form-control'
+          %li
+            = f.text_field :contact_no, class: 'form-control'
+          %li
+            = f.text_field :email, class: 'form-control'
+          %li
+            = f.text_field :age, class: 'form-control'
+
+        = f.button 'Submit', type: 'button', class: 'primary btn', id: 'submitBtn'
+      .wrapper.comment-section.col-md-4
+        %ul
+          %li
+          %li
+          %li
+          %li
+            = link_to 'Fixed deposit Interest Rate', image_path('Business rules.png'), target: '_blank'
+          %li

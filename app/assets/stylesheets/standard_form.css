@@ -31,3 +31,7 @@
   font-weight: normal;
   padding:15px 0;
 }
+select{
+  padding: 5px;
+  margin-top: 2px;
+}
