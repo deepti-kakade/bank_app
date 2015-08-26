@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account_number: MyString
+  deposit_amount: 1
+  type_of_deposit: MyString
+  tenure_of_deposit_years: 1
+  tenure_of_deposit_months: 1
+  tenure_of_deposit_days: 1
+  pan: MyString
+  maturity_proceed: 1
+  contact_no: MyString
+  email: MyString
+
+two:
+  account_number: MyString
+  deposit_amount: 1
+  type_of_deposit: MyString
+  tenure_of_deposit_years: 1
+  tenure_of_deposit_months: 1
+  tenure_of_deposit_days: 1
+  pan: MyString
+  maturity_proceed: 1
+  contact_no: MyString
+  email: MyString
