@@ -4,9 +4,9 @@ class CreateFixedDeposits < ActiveRecord::Migration
       t.string :account_number
       t.integer :deposit_amount
       t.string :type_of_deposit
-      t.integer :tenure_of_deposit_years, default: 0
-      t.integer :tenure_of_deposit_months, default: 0
-      t.integer :tenure_of_deposit_days, default: 0
+      t.integer :tenure_of_deposit_year, default: 0
+      t.integer :tenure_of_deposit_month, default: 0
+      t.integer :tenure_of_deposit_day, default: 0
       t.string :pan
       t.integer :maturity_proceed
       t.string :contact_no

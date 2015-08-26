@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=Edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", :media => "all"
+  %body{"data-env" => Rails.env}
+    .wrapper
+      %noscript
+        %h3 Sorry, Java script is disable in this browser,You can enable the Java script through browser settings.
+      = yield
+      = content_for?(:js) ? yield(:js) : javascript_include_tag("application")

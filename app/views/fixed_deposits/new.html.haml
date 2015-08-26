@@ -1,0 +1,58 @@
+.container-fluid
+  .container
+    .header
+      %h2 Open Standard Fixed Deposit
+    .wrapper.col-md-4.pull-left
+      %ul
+        %li Debit Account Number :
+        %li Amount Of Deposit* :
+        %li Type Of Deposit* :
+        %li Tenure Of Deposit(Year)* :
+        %li Tenure Of Deposit(Months)* :
+        %li Tenure Of Deposit(days)* :
+        %li
+          PAN :
+          %label.col-md-12 (PAN is compulsory for FD request of Rs.50,000/- and above)
+        %li Maturity Proceeds* :
+        %li Mobile Number** :
+        %li Email ** :
+    .wrapper.input-field.col-md-4
+      %ul
+        %li
+          %input.form-control{:type => "text"}/
+        %li
+          %input.form-control{:type => "text"}/
+        %li
+          %select#sel1.form-control
+            %option Saving
+            %option Current
+            %option Salary
+            %option Fixed
+        %li
+          %select#sel2.form-control
+            %option
+            %option
+        %li
+          %select#sel3.form-control
+            %option
+            %option
+        %li
+          %input.form-control{:type => "text"}/
+        %li
+          %input.form-control{:type => "text"}/
+        %li
+          %select#sel4.form-control
+            %option
+            %option
+        %li
+          %input.form-control{:type => "text"}/
+        %li
+          %input.form-control{:type => "text"}/
+    .wrapper.comment-section.col-md-4
+      %ul
+        %li
+        %li
+        %li
+        %li
+          %label Fixed deposit Interest Rate
+        %li

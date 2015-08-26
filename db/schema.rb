@@ -20,16 +20,16 @@ ActiveRecord::Schema.define(version: 20150826063441) do
     t.string   "account_number"
     t.integer  "deposit_amount"
     t.string   "type_of_deposit"
-    t.integer  "tenure_of_deposit_years",  default: 0
-    t.integer  "tenure_of_deposit_months", default: 0
-    t.integer  "tenure_of_deposit_days",   default: 0
+    t.integer  "tenure_of_deposit_year",  default: 0
+    t.integer  "tenure_of_deposit_month", default: 0
+    t.integer  "tenure_of_deposit_day",   default: 0
     t.string   "pan"
     t.integer  "maturity_proceed"
     t.string   "contact_no"
     t.string   "email"
     t.integer  "age"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "fixed_deposits", ["account_number"], name: "index_fixed_deposits_on_account_number", using: :btree
